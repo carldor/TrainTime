@@ -57,13 +57,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var minutesAway = trainFrequency - (totalMinute % trainFrequency);
   var nextArrival = moment(moment()).add(minutesAway, 'minutes').format('HH:mm'); 
 
-  console.log(minutesAway);
-  console.log(nextArrival);
-  // currentTime = String(moment().format('HH:mm')_i)
-  // var t = trainTime.split(':');
-  // var t2 = currentTime.split(':');
-
-  // var totalMinutes = (parseInt(Math.abs(t[0]) - t2[0]) * 60) + (Math.abs(parseInt(t[1]-t2[0]));
 
   $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" +
   trainFrequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>");
